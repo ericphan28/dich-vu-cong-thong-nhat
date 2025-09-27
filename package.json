@@ -4,7 +4,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:check": "npm run lint && npm run build",
+    "deploy:check": "npm run build:check && echo 'Ready for production deployment!'"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.1",
