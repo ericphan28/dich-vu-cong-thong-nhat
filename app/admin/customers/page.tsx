@@ -56,77 +56,77 @@ export default function CustomersPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <div className="flex justify-between items-center">
+      <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Quản lý Khách hàng</h1>
-            <p className="text-gray-600">Danh sách và thông tin khách hàng</p>
+            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 mb-1 lg:mb-2">Quản lý Khách hàng</h1>
+            <p className="text-sm lg:text-base text-gray-600">Danh sách và thông tin khách hàng</p>
           </div>
-          <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+          <button className="bg-red-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-lg hover:bg-red-700 transition-colors text-sm lg:text-base">
             + Thêm khách hàng
           </button>
         </div>
       </div>
 
       {/* Search and Filter */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <div className="flex flex-col md:flex-row gap-4">
+      <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
           <div className="flex-1">
             <input
               type="text"
               placeholder="Tìm kiếm theo tên, số điện thoại..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-3 py-2 lg:px-4 lg:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm lg:text-base"
             />
           </div>
-          <select className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+          <select className="px-3 py-2 lg:px-4 lg:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm lg:text-base">
             <option value="">Tất cả trạng thái</option>
             <option value="new">Khách hàng mới</option>
             <option value="active">Khách hàng thường xuyên</option>
             <option value="vip">Khách hàng VIP</option>
           </select>
-          <button className="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+          <button className="bg-gray-600 text-white px-4 py-2 lg:px-6 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
             Tìm kiếm
           </button>
         </div>
       </div>
 
       {/* Customer Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white rounded-lg shadow p-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
+        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Tổng khách hàng</p>
-              <p className="text-2xl font-bold text-gray-900">{customers.length}</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600">Tổng khách hàng</p>
+              <p className="text-lg lg:text-2xl font-bold text-gray-900">{customers.length}</p>
             </div>
-            <div className="text-blue-500 text-2xl">👥</div>
+            <div className="text-blue-500 text-xl lg:text-2xl">👥</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Khách mới tháng này</p>
-              <p className="text-2xl font-bold text-green-600">12</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600">Khách mới tháng này</p>
+              <p className="text-lg lg:text-2xl font-bold text-green-600">12</p>
             </div>
-            <div className="text-green-500 text-2xl">🆕</div>
+            <div className="text-green-500 text-xl lg:text-2xl">🆕</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Khách VIP</p>
-              <p className="text-2xl font-bold text-purple-600">8</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600">Khách VIP</p>
+              <p className="text-lg lg:text-2xl font-bold text-purple-600">8</p>
             </div>
-            <div className="text-purple-500 text-2xl">⭐</div>
+            <div className="text-purple-500 text-xl lg:text-2xl">⭐</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Tổng chi tiêu</p>
-              <p className="text-2xl font-bold text-red-600">25.6M</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600">Tổng chi tiêu</p>
+              <p className="text-lg lg:text-2xl font-bold text-red-600">25.6M</p>
             </div>
             <div className="text-red-500 text-2xl">💰</div>
           </div>
@@ -135,7 +135,8 @@ export default function CustomersPage() {
 
       {/* Customer Table */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="hidden lg:block overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -220,14 +221,73 @@ export default function CustomersPage() {
             </tbody>
           </table>
         </div>
+
+        {/* Mobile Cards */}
+        <div className="lg:hidden divide-y divide-gray-200">
+          {customers.map((customer) => (
+            <div key={customer.id} className="p-4 space-y-3">
+              <div className="flex items-start justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+                    <span className="text-red-600 font-medium text-sm">
+                      {customer.name.charAt(customer.name.lastIndexOf(' ') + 1)}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-900">{customer.name}</div>
+                    <div className="text-xs text-gray-500">ID: {customer.id}</div>
+                  </div>
+                </div>
+                <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                  customer.status === 'vip' ? 'bg-purple-100 text-purple-800' :
+                  customer.status === 'active' ? 'bg-green-100 text-green-800' :
+                  'bg-blue-100 text-blue-800'
+                }`}>
+                  {customer.status === 'vip' ? 'VIP' : 
+                   customer.status === 'active' ? 'Thường xuyên' : 'Mới'}
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <span className="text-gray-500">SĐT:</span>
+                  <div className="font-medium text-gray-900">{customer.phone}</div>
+                </div>
+                <div>
+                  <span className="text-gray-500">Lần cuối:</span>
+                  <div className="font-medium text-gray-900">{customer.lastOrder}</div>
+                </div>
+                <div>
+                  <span className="text-gray-500">Tổng đơn:</span>
+                  <div className="font-medium text-gray-900">{customer.totalOrders} đơn</div>
+                </div>
+                <div>
+                  <span className="text-gray-500">Tổng chi:</span>
+                  <div className="font-medium text-gray-900">{customer.totalSpent.toLocaleString('vi-VN')}đ</div>
+                </div>
+              </div>
+              
+              <div>
+                <span className="text-gray-500 text-sm">Địa chỉ:</span>
+                <div className="text-sm text-gray-900 mt-1">{customer.address}</div>
+              </div>
+              
+              <div className="flex justify-end space-x-3 pt-2 border-t border-gray-100">
+                <button className="text-red-600 hover:text-red-900 text-sm font-medium">Xem</button>
+                <button className="text-blue-600 hover:text-blue-900 text-sm font-medium">Sửa</button>
+                <button className="text-green-600 hover:text-green-900 text-sm font-medium">Gọi</button>
+              </div>
+            </div>
+          ))}
+        </div>
         
         {/* Pagination */}
         <div className="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
             <div className="text-sm text-gray-700">
               Hiển thị <span className="font-medium">1</span> đến <span className="font-medium">5</span> trong tổng số <span className="font-medium">5</span> khách hàng
             </div>
-            <div className="flex space-x-2">
+            <div className="flex justify-center sm:justify-end space-x-2">
               <button className="px-3 py-1 border border-gray-300 rounded-md text-sm text-gray-500">Trước</button>
               <button className="px-3 py-1 bg-red-600 text-white rounded-md text-sm">1</button>
               <button className="px-3 py-1 border border-gray-300 rounded-md text-sm text-gray-500">Sau</button>
