@@ -1,105 +1,113 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# Hỗ Trợ Dịch Vụ Công Thống Nhất - Landing Page
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+## Mô tả
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+Website giới thiệu dịch vụ hỗ trợ làm thủ tục hành chính tại Xã Thống Nhất, Tỉnh Đồng Nai do Anh Trí điều hành. Website được thiết kế với giao diện thân thiện, tối ưu cho người dùng Việt Nam và đặc biệt chú trọng hiển thị trên thiết bị di động.
 
-## Features
+## Tính năng chính
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+### 🎨 Thiết kế
+- Sử dụng màu đỏ làm chủ đạo - tượng trưng cho dịch vụ công quốc gia
+- Thiết kế responsive, tối ưu cho mobile-first
+- Hiệu ứng chuyển động mượt mà và hiện đại
+- Giao diện thân thiện với người dùng Việt Nam
 
-## Demo
+### 📱 Tối ưu Mobile
+- Layout responsive cho mọi kích thước màn hình
+- Nút gọi điện và chat Zalo nổi (floating) trên mobile
+- Typography và spacing được tối ưu cho mobile
+- Touch-friendly buttons và elements
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+### 🚀 Chức năng
+- Hiển thị đầy đủ các dịch vụ được cung cấp
+- Thông tin liên hệ và giờ làm việc rõ ràng
+- Liên kết trực tiếp đến điện thoại và Zalo
+- Footer chứa thông tin developer và đối tác công nghệ
 
-## Deploy to Vercel
+### 💼 Dịch vụ được liệt kê
+- Photocopy, soạn hợp đồng các loại
+- Sao y, chứng thực
+- Đăng ký kết hôn, trích lục kết hôn, ly hôn
+- Đăng ký khai sinh, trích lục khai sinh
+- Đăng ký khai tử, trích lục khai tử
+- Hồ sơ thừa kế, tặng cho, chuyển nhượng quyền SDD
+- Và nhiều dịch vụ khác...
 
-Vercel deployment will guide you through creating a Supabase account and project.
+## Thông tin liên hệ
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+**Chủ dịch vụ:** Anh Trí  
+**Điện thoại/Zalo:** 0933.211.134  
+**Địa chỉ:** 18-25 Quốc lộ 20, Ấp Lập Thành, Xã Dầu Giây, Đồng Nai  
+**Giờ làm việc:** 
+- Sáng: 6:30 - 11:30
+- Chiều: 13:30 - 20:00
+- Từ thứ hai đến chủ nhật
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+## Công nghệ sử dụng
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+- **Framework:** Next.js 15 với App Router
+- **Styling:** Tailwind CSS
+- **TypeScript:** Fully typed
+- **Fonts:** Geist Sans
+- **Deployment:** Vercel (ready)
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+## Cài đặt và chạy
 
-## Clone and run locally
+```bash
+# Cài đặt dependencies
+npm install
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+# Chạy development server
+npm run dev
 
-2. Create a Next.js app using the Supabase Starter template npx command
+# Build production
+npm run build
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+# Chạy production server
+npm start
+```
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+## Developer & Technology Partner
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+**Developer:** Thắng Phan  
+📱 Zalo: 0907 136 029  
+📘 [Facebook Profile](https://www.facebook.com/thang.phan.334/)  
 
-3. Use `cd` to change into the app's directory
+**Technology Partner:** Cty TNHH Gia Kiểm Số  
+🌐 [Giakiemso.com](https://www.giakiemso.com/)  
+📘 [Facebook Page](https://www.facebook.com/profile.php?id=61577066581766)  
 
-   ```bash
-   cd with-supabase-app
-   ```
+## Cấu trúc thư mục
 
-4. Rename `.env.example` to `.env.local` and update the following:
+```
+/
+├── app/
+│   ├── layout.tsx          # Root layout với metadata
+│   ├── page.tsx            # Landing page chính
+│   └── globals.css         # Styles toàn cục
+├── public/
+│   └── images/
+│       └── logo/
+│           ├── tri-tu-thien.jpg      # Ảnh Anh Trí
+│           ├── thang-phan.png        # Ảnh developer
+│           └── gia-kiem-so-logo.png  # Logo công ty
+└── components/             # Các component tái sử dụng
+```
 
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
+## Tối ưu SEO
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+- Metadata đầy đủ với title, description, keywords
+- Open Graph tags
+- Responsive viewport
+- Semantic HTML structure
+- Performance optimized
 
-5. You can now run the Next.js local development server:
+## Liên hệ hỗ trợ
 
-   ```bash
-   npm run dev
-   ```
+Nếu cần hỗ trợ kỹ thuật hoặc cập nhật website, vui lòng liên hệ:  
+**Thắng Phan - Developer**  
+📱 Zalo: 0907 136 029
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+---
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
-
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
-
-## Feedback and issues
-
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
-
-## More Supabase examples
-
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+© 2024 Hỗ Trợ Dịch Vụ Công Thống Nhất. Tất cả quyền được bảo lưu.
