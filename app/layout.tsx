@@ -1,6 +1,9 @@
 ﻿import { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ToastProvider } from "@/components/toast-provider";
+import { ToastContainer } from "@/components/toast-container";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -24,9 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi">
-      <body className={geistSans.className}>
-        {children}
+    <html lang="vi" className="h-full" suppressHydrationWarning>
+      <body className={`${geistSans.className} h-full bg-white dark:bg-gray-900 transition-colors`}>
+        <ThemeProvider>
+          <ToastProvider>
+            {children}
+            <ToastContainer />
+          </ToastProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

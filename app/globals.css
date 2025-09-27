@@ -12,6 +12,25 @@
   body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode color schemes */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Improved focus states for accessibility */
+  :focus-visible {
+    outline: 2px solid rgb(59 130 246);
+    outline-offset: 2px;
+  }
+
+  /* Smooth transitions for all elements */
+  * {
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
