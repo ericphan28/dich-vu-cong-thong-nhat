@@ -71,11 +71,11 @@ export default function FinancePage() {
   return (
     <div className="space-y-4 lg:space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
           <div>
-            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 mb-1 lg:mb-2">💰 Quản lý Tài chính</h1>
-            <p className="text-sm lg:text-base text-gray-600">Theo dõi doanh thu, chi phí và lợi nhuận</p>
+            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-1 lg:mb-2">💰 Quản lý Tài chính</h1>
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Theo dõi doanh thu, chi phí và lợi nhuận</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <button className="bg-green-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-lg hover:bg-green-700 transition-colors text-sm lg:text-base">
@@ -90,45 +90,45 @@ export default function FinancePage() {
 
       {/* Financial Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Tổng doanh thu</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Tổng doanh thu</p>
               <p className="text-lg lg:text-2xl font-bold text-green-600">{financialStats.totalRevenue.toLocaleString('vi-VN')}đ</p>
-              <p className="text-xs text-gray-500">Tháng này: {financialStats.monthlyRevenue.toLocaleString('vi-VN')}đ</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Tháng này: {financialStats.monthlyRevenue.toLocaleString('vi-VN')}đ</p>
             </div>
             <div className="text-green-500 text-xl lg:text-2xl">💰</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Tổng chi phí</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Tổng chi phí</p>
               <p className="text-lg lg:text-2xl font-bold text-red-600">{financialStats.totalExpenses.toLocaleString('vi-VN')}đ</p>
-              <p className="text-xs text-gray-500">Tháng này: {financialStats.monthlyExpenses.toLocaleString('vi-VN')}đ</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Tháng này: {financialStats.monthlyExpenses.toLocaleString('vi-VN')}đ</p>
             </div>
             <div className="text-red-500 text-xl lg:text-2xl">💸</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Lợi nhuận</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Lợi nhuận</p>
               <p className="text-lg lg:text-2xl font-bold text-blue-600">{financialStats.profit.toLocaleString('vi-VN')}đ</p>
-              <p className="text-xs text-gray-500">Tháng này: {financialStats.monthlyProfit.toLocaleString('vi-VN')}đ</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Tháng này: {financialStats.monthlyProfit.toLocaleString('vi-VN')}đ</p>
             </div>
             <div className="text-blue-500 text-xl lg:text-2xl">📈</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Chờ thanh toán</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Chờ thanh toán</p>
               <p className="text-lg lg:text-2xl font-bold text-orange-600">{financialStats.pendingPayments.toLocaleString('vi-VN')}đ</p>
-              <p className="text-xs text-red-500">Quá hạn: {financialStats.overduePayments.toLocaleString('vi-VN')}đ</p>
+              <p className="text-xs text-red-500 dark:text-red-400">Quá hạn: {financialStats.overduePayments.toLocaleString('vi-VN')}đ</p>
             </div>
             <div className="text-orange-500 text-xl lg:text-2xl">⏳</div>
           </div>
@@ -137,30 +137,30 @@ export default function FinancePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         {/* Recent Transactions */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="p-4 lg:p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800">Giao dịch gần đây</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Giao dịch gần đây</h2>
           </div>
           
           {/* Desktop Table */}
           <div className="hidden lg:block">
             <div className="overflow-x-auto">
               <table className="min-w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-gray-50 dark:bg-gray-700">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Mô tả</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Số tiền</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ngày</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Mô tả</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Số tiền</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Ngày</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                   {recentTransactions.map((transaction) => (
                     <tr key={transaction.id}>
                       <td className="px-6 py-4">
                         <div>
-                          <p className="text-sm font-medium text-gray-900">{transaction.description}</p>
+                          <p className="text-sm font-medium text-gray-900 dark:text-white">{transaction.description}</p>
                           {transaction.customer && (
-                            <p className="text-xs text-gray-500">{transaction.customer}</p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">{transaction.customer}</p>
                           )}
                         </div>
                       </td>
@@ -171,7 +171,7 @@ export default function FinancePage() {
                           {transaction.type === 'income' ? '+' : '-'}{transaction.amount.toLocaleString('vi-VN')}đ
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-900">{transaction.date}</td>
+                      <td className="px-6 py-4 text-sm text-gray-900 dark:text-white">{transaction.date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -180,16 +180,16 @@ export default function FinancePage() {
           </div>
 
           {/* Mobile Cards */}
-          <div className="lg:hidden divide-y divide-gray-200">
+          <div className="lg:hidden divide-y divide-gray-200 dark:divide-gray-700">
             {recentTransactions.map((transaction) => (
               <div key={transaction.id} className="p-4 space-y-2">
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">{transaction.description}</p>
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">{transaction.description}</p>
                     {transaction.customer && (
-                      <p className="text-xs text-gray-500">{transaction.customer}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">{transaction.customer}</p>
                     )}
-                    <p className="text-xs text-gray-500">{transaction.date}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{transaction.date}</p>
                   </div>
                   <div className="text-right">
                     <span className={`font-medium ${
@@ -198,7 +198,7 @@ export default function FinancePage() {
                       {transaction.type === 'income' ? '+' : '-'}{transaction.amount.toLocaleString('vi-VN')}đ
                     </span>
                     <p className={`text-xs px-2 py-1 rounded-full inline-block ml-2 ${
-                      transaction.status === 'completed' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
+                      transaction.status === 'completed' ? 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200' : 'bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200'
                     }`}>
                       {transaction.status === 'completed' ? 'Hoàn thành' : 'Chờ xử lý'}
                     </p>
@@ -210,9 +210,9 @@ export default function FinancePage() {
         </div>
 
         {/* Monthly Overview */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="p-4 lg:p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800">Tổng quan theo tháng</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Tổng quan theo tháng</h2>
           </div>
           <div className="p-4 lg:p-6">
             <div className="space-y-4">

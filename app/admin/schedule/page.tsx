@@ -96,13 +96,13 @@ export default function SchedulePage() {
   const getStatusBadge = (status: string) => {
     switch(status) {
       case 'completed':
-        return 'bg-green-100 text-green-800';
+        return 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200';
       case 'upcoming':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200';
       case 'pending':
-        return 'bg-orange-100 text-orange-800';
+        return 'bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200';
       default:
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
     }
   };
 
@@ -137,11 +137,12 @@ export default function SchedulePage() {
   return (
     <div className="space-y-4 lg:space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+      {/* Header */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
           <div>
-            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 mb-1 lg:mb-2">📅 Lịch làm việc</h1>
-            <p className="text-sm lg:text-base text-gray-600">Quản lý lịch hẹn và công việc hàng ngày</p>
+            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-1 lg:mb-2">📅 Lịch làm việc</h1>
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Quản lý lịch hẹn và công việc hàng ngày</p>
           </div>
           <button className="bg-red-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-lg hover:bg-red-700 transition-colors text-sm lg:text-base">
             + Thêm lịch hẹn
@@ -151,30 +152,30 @@ export default function SchedulePage() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Tổng công việc</p>
-              <p className="text-lg lg:text-2xl font-bold text-gray-900">{quickStats.todayTasks}</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Tổng công việc</p>
+              <p className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">{quickStats.todayTasks}</p>
             </div>
             <div className="text-gray-500 text-xl lg:text-2xl">📋</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Hoàn thành</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Hoàn thành</p>
               <p className="text-lg lg:text-2xl font-bold text-green-600">{quickStats.completed}</p>
             </div>
             <div className="text-green-500 text-xl lg:text-2xl">✅</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs lg:text-sm font-medium text-gray-600">Sắp tới</p>
+              <p className="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-300">Sắp tới</p>
               <p className="text-lg lg:text-2xl font-bold text-blue-600">{quickStats.upcoming}</p>
             </div>
             <div className="text-blue-500 text-xl lg:text-2xl">🕒</div>
@@ -194,15 +195,15 @@ export default function SchedulePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         {/* Today's Schedule */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="p-4 lg:p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800">Lịch hôm nay (27/09/2024)</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Lịch hôm nay (27/09/2024)</h2>
           </div>
           
           <div className="p-4 lg:p-6">
             <div className="space-y-3 lg:space-y-4">
               {todaySchedule.map((task) => (
-                <div key={task.id} className="border rounded-lg p-3 lg:p-4 hover:bg-gray-50 transition-colors">
+                <div key={task.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 lg:p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0">
                       <div className={`w-3 h-3 lg:w-4 lg:h-4 rounded-full mt-1 ${
@@ -215,16 +216,16 @@ export default function SchedulePage() {
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-1">
                             <span className="text-lg">{getTypeIcon(task.type)}</span>
-                            <span className="text-xs lg:text-sm font-medium text-gray-900">{task.time}</span>
+                            <span className="text-xs lg:text-sm font-medium text-gray-900 dark:text-white">{task.time}</span>
                           </div>
                           <p className={`text-sm lg:text-base font-medium ${
-                            task.status === 'completed' ? 'text-gray-500 line-through' : 'text-gray-800'
+                            task.status === 'completed' ? 'text-gray-500 dark:text-gray-400 line-through' : 'text-gray-800 dark:text-white'
                           }`}>
                             {task.title}
                           </p>
-                          <p className="text-xs lg:text-sm text-gray-500 mt-1">📍 {task.location}</p>
+                          <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 mt-1">📍 {task.location}</p>
                           {task.customer && (
-                            <p className="text-xs lg:text-sm text-gray-600 mt-1">
+                            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-1">
                               👤 {task.customer} • {task.phone}
                             </p>
                           )}
@@ -235,16 +236,16 @@ export default function SchedulePage() {
                       </div>
                       
                       {task.status !== 'completed' && (
-                        <div className="flex justify-end space-x-2 mt-3 pt-2 border-t border-gray-100">
-                          <button className="text-xs lg:text-sm text-blue-600 hover:text-blue-800 font-medium">
+                        <div className="flex justify-end space-x-2 mt-3 pt-2 border-t border-gray-100 dark:border-gray-700">
+                          <button className="text-xs lg:text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors">
                             Hoàn thành
                           </button>
                           {task.customer && (
-                            <button className="text-xs lg:text-sm text-green-600 hover:text-green-800 font-medium">
+                            <button className="text-xs lg:text-sm text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300 font-medium transition-colors">
                               Gọi điện
                             </button>
                           )}
-                          <button className="text-xs lg:text-sm text-gray-600 hover:text-gray-800 font-medium">
+                          <button className="text-xs lg:text-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 font-medium transition-colors">
                             Chỉnh sửa
                           </button>
                         </div>

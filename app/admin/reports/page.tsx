@@ -44,11 +44,11 @@ export default function ReportsPage() {
   return (
     <div className="space-y-4 lg:space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-4 lg:p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-6 transition-colors">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-3 sm:space-y-0">
           <div>
-            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 mb-1 lg:mb-2">📈 Báo cáo & Thống kê</h1>
-            <p className="text-sm lg:text-base text-gray-600">Phân tích hiệu suất kinh doanh và khách hàng</p>
+            <h1 className="text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-1 lg:mb-2">📈 Báo cáo & Thống kê</h1>
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Phân tích hiệu suất kinh doanh và khách hàng</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <button className="bg-green-600 text-white px-3 py-2 lg:px-4 lg:py-2 rounded-lg hover:bg-green-700 transition-colors text-sm lg:text-base">
@@ -63,39 +63,39 @@ export default function ReportsPage() {
 
       {/* Key Metrics */}
       <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 lg:gap-4">
-        <div className="bg-white rounded-lg shadow p-4 lg:p-5">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-5 transition-colors">
           <div className="flex flex-col items-center text-center">
             <div className="text-2xl lg:text-3xl mb-2">👥</div>
             <p className="text-lg lg:text-2xl font-bold text-blue-600">{reportStats.totalCustomers}</p>
-            <p className="text-xs lg:text-sm text-gray-600">Tổng KH</p>
+            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300">Tổng KH</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-5">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-5 transition-colors">
           <div className="flex flex-col items-center text-center">
             <div className="text-2xl lg:text-3xl mb-2">📋</div>
             <p className="text-lg lg:text-2xl font-bold text-green-600">{reportStats.totalOrders}</p>
-            <p className="text-xs lg:text-sm text-gray-600">Tổng đơn</p>
+            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300">Tổng đơn</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-5">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-5 transition-colors">
           <div className="flex flex-col items-center text-center">
             <div className="text-2xl lg:text-3xl mb-2">💰</div>
             <p className="text-lg lg:text-2xl font-bold text-red-600">{(reportStats.totalRevenue / 1000000).toFixed(1)}M</p>
-            <p className="text-xs lg:text-sm text-gray-600">Doanh thu</p>
+            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300">Doanh thu</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-5">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-5 transition-colors">
           <div className="flex flex-col items-center text-center">
             <div className="text-2xl lg:text-3xl mb-2">✅</div>
             <p className="text-lg lg:text-2xl font-bold text-purple-600">{reportStats.completionRate}%</p>
-            <p className="text-xs lg:text-sm text-gray-600">Hoàn thành</p>
+            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300">Hoàn thành</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-4 lg:p-5">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 lg:p-5 transition-colors">
           <div className="flex flex-col items-center text-center">
             <div className="text-2xl lg:text-3xl mb-2">💵</div>
             <p className="text-lg lg:text-2xl font-bold text-orange-600">{(reportStats.avgOrderValue / 1000).toFixed(0)}K</p>
@@ -114,16 +114,16 @@ export default function ReportsPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
         {/* Monthly Performance */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="p-4 lg:p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800">Hiệu suất theo tháng</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Hiệu suất theo tháng</h2>
           </div>
           <div className="p-4 lg:p-6">
             <div className="space-y-4">
               {monthlyPerformance.map((month) => (
-                <div key={month.month} className="border rounded-lg p-3 lg:p-4">
+                <div key={month.month} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 lg:p-4">
                   <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-sm font-medium text-gray-900">{month.month}</h3>
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">{month.month}</h3>
                     <span className="text-sm font-bold text-blue-600">
                       {month.revenue.toLocaleString('vi-VN')}đ
                     </span>
@@ -132,22 +132,22 @@ export default function ReportsPage() {
                   <div className="grid grid-cols-3 gap-2 lg:gap-4 text-sm mb-3">
                     <div className="text-center">
                       <span className="block text-lg font-bold text-green-600">{month.orders}</span>
-                      <span className="text-xs text-gray-500">Đơn hàng</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">Đơn hàng</span>
                     </div>
                     <div className="text-center">
                       <span className="block text-lg font-bold text-blue-600">{month.customers}</span>
-                      <span className="text-xs text-gray-500">Khách hàng</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">Khách hàng</span>
                     </div>
                     <div className="text-center">
                       <span className="block text-lg font-bold text-purple-600">
                         {(month.revenue / month.orders / 1000).toFixed(0)}K
                       </span>
-                      <span className="text-xs text-gray-500">TB/đơn</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">TB/đơn</span>
                     </div>
                   </div>
 
                   {/* Progress compared to max month */}
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500"
                       style={{width: `${(month.revenue / Math.max(...monthlyPerformance.map(m => m.revenue))) * 100}%`}}
@@ -160,27 +160,27 @@ export default function ReportsPage() {
         </div>
 
         {/* Service Analysis */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="p-4 lg:p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800">Phân tích dịch vụ</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Phân tích dịch vụ</h2>
           </div>
           <div className="p-4 lg:p-6">
             <div className="space-y-3">
               {serviceAnalysis.map((service) => (
-                <div key={service.name} className="border rounded-lg p-3">
+                <div key={service.name} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-sm font-medium text-gray-900 truncate pr-2">{service.name}</h3>
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white truncate pr-2">{service.name}</h3>
                     <span className="text-sm font-bold text-green-600 flex-shrink-0">
                       {service.revenue.toLocaleString('vi-VN')}đ
                     </span>
                   </div>
                   
-                  <div className="flex justify-between items-center text-xs text-gray-600 mb-2">
+                  <div className="flex justify-between items-center text-xs text-gray-600 dark:text-gray-300 mb-2">
                     <span>{service.orders} đơn hàng</span>
                     <span>{service.percentage}% tổng doanh thu</span>
                   </div>
 
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-red-400 to-red-600 h-2 rounded-full transition-all duration-500"
                       style={{width: `${service.percentage}%`}}

@@ -105,35 +105,114 @@ export default function HomePage() {
       </section>      {/* Services Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-red-600">Các Dịch Vụ Chúng Tôi Cung Cấp</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-red-600">25 Dịch Vụ Công Trực Tuyến Thống Nhất</h3>
+          <p className="text-center text-gray-600 mb-8 text-sm sm:text-base">
+            <span className="font-semibold text-red-600">🏛️ Dịch vụ công trực tuyến toàn trình thiết yếu, bước làm thủ tục trực tuyến từ ngày 1-10, không nhận hồ sơ giấy</span>
+          </p>
           <div className="service-grid">
-            {/* Service Cards */}
+            {/* Nhóm 1: Dịch vụ Giấy tờ tùy thân */}
             {[
-              "📄 Photocopy, soạn hợp đồng các loại",
-              "✍️ Sao y, chứng thực",
-              "💒 Đăng ký kết hôn, trích lục kết hôn, ly hôn",
-              "👶 Đăng ký khai sinh, trích lục khai sinh",
-              "⚰️ Đăng ký khai tử, trích lục khai tử",
-              "🏠 Hồ sơ thừa kế, tặng cho, chuyển nhượng quyền SDD",
-              "📋 Xóa thẻ chấp, đăng ký thẻ chấp, chuyển mục đích",
-              "💼 Hồ sơ xin việc",
-              "🏢 Đăng ký giấy phép kinh doanh",
-              "💳 Vay vốn ngân hàng",
-              "🏥 Bán bảo hiểm y tế",
-              "🚗 Hồ sơ thị bằng lái xe các hạng",
-              "🔄 Đổi bằng lái xe cấp hạng",
-              "🏍️ Hồ sơ đăng ký ôtô, mô tô",
-              "🆔 Đăng ký lại CCCD",
-              "🔐 Đăng ký định danh mức 2",
-              "🏠 Đăng ký tạm trú, thường trú"
+              "🆔 Xác nhận số chứng minh nhân dân khi đã được cấp thẻ căn cước công dân",
+              "🔄 Cấp lại, đổi thẻ căn cước công dân",
+              "📋 Đăng ký thương trú"
             ].map((service, index) => (
-              <div key={index} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
+              <div key={`id-${index}`} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
                 <div className="flex items-start space-x-3">
                   <span className="text-red-500 text-lg flex-shrink-0 mt-0.5">✓</span>
                   <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{service}</p>
                 </div>
               </div>
             ))}
+            
+            {/* Nhóm 2: Dịch vụ Hộ tịch - Dân cư */}
+            {[
+              "🏠 Đăng ký tạm trú",
+              "� Khai báo tạm vắng",
+              "🏘️ Thông báo lưu trú",
+              "🏍️ Đăng ký, cấp biển số mô tô, xe gắn máy",
+              "💰 Thu tiền nộp phạt vi lý vi phạm hành chính trong lĩnh vực giao thông đường bộ qua thiết bị ghi hình (phạt nguội)",
+              "👶 Đăng ký khai sinh",
+              "⚰️ Đăng ký khai tử",
+              "💒 Đăng ký kết hôn",
+              "📋 Cấp, cấp lại, sửa đổi, bổ sung hộ chiếu phổ thông"
+            ].map((service, index) => (
+              <div key={`civil-${index}`} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
+                <div className="flex items-start space-x-3">
+                  <span className="text-red-500 text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{service}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Nhóm 3: Dịch vụ Pháp lý - Công chứng */}
+            {[
+              "🔐 Thủ tục làm con dấu mới và cấp giấy chứng nhận đã đăng ký mẫu dấu",
+              "🔄 Thủ tục làm con dấu thay thế, dấu nổi, dấu xí và cấp giấy chứng nhận đã đăng ký mẫu con dấu",
+              "� Liên thông đăng ký khai sinh - Đăng ký thường trú - Cấp thẻ bảo hiểm y tế theo hộ gia đình",
+              "📝 Liên thông đăng ký khai tử - Xóa đăng ký thường trú - Trợ cấp mai táng phí",
+              "🏠 Tích hợp tính năm về quyền sử dụng đất trong gia hạn thẻ bảo hiểm y tế theo hộ gia đình"
+            ].map((service, index) => (
+              <div key={`legal-${index}`} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
+                <div className="flex items-start space-x-3">
+                  <span className="text-red-500 text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{service}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Nhóm 4: Dịch vụ Giao thông - Phương tiện */}
+            {[
+              "🚗 Đăng ký biến động về quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất để tín dụng được cấp giấy chứng nhận (quyền tín dụng, hoặc giấy tờ pháp nhân, giấy tờ nhân thân, địa chỉ)",
+              "📄 Cấp đổi, cấp lại giấy phép lái xe",
+              "🎓 Đăng ký du lịch tốt nghiệp THPT và cuốc gia vào xét tuyển đại học, cao đẳng",
+              "📋 Cấp phiếu lý lịch tư pháp",
+              "💼 Giải quyết hưởng trợ cấp thất nghiệp",
+              "⚡ Cấp điện mới tư lưới điện hạ áp (220/380V)",
+              "🔌 Thay đổi chủ hộ đồng mua bán điện"
+            ].map((service, index) => (
+              <div key={`transport-${index}`} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
+                <div className="flex items-start space-x-3">
+                  <span className="text-red-500 text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{service}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Nhóm 5: Dịch vụ Hỗ trợ & Tư vấn */}
+            {[
+              "📄 Photocopy, soạn hợp đồng các loại",
+              "✍️ Sao y, chứng thực",
+              "🏠 Hồ sơ thừa kế, tặng cho, chuyển nhượng quyền SDD",
+              "📋 Xóa thẻ chấp, đăng ký thẻ chấp, chuyển mục đích",
+              "💼 Hồ sơ xin việc",
+              "🏢 Đăng ký giấy phép kinh doanh",
+              "💳 Vay vốn ngân hàng",
+              "🏥 Bán bảo hiểm y tế",
+              "🚗 Hồ sơ thi bằng lái xe các hạng",
+              "🔄 Đổi bằng lái xe các hạng",
+              "🏍️ Hồ sơ đăng ký ôtô, mô tô",
+              "🆔 Đăng ký lại CCCD",
+              "🔐 Đăng ký định danh mức 2",
+              "🏠 Đăng ký tạm trú, thường trú"
+            ].map((service, index) => (
+              <div key={`support-${index}`} className="bg-white border border-red-100 rounded-lg p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
+                <div className="flex items-start space-x-3">
+                  <span className="text-red-500 text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{service}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Ghi chú quan trọng */}
+          <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center max-w-4xl mx-auto">
+            <div className="text-yellow-600 text-2xl mb-3">⚠️</div>
+            <h4 className="text-lg font-bold text-yellow-800 mb-2">Lưu ý quan trọng</h4>
+            <p className="text-sm sm:text-base text-yellow-700 leading-relaxed">
+              <span className="font-semibold">25 dịch vụ công trực tuyến trên</span> được triển khai từ ngày 1-10, 
+              thực hiện <span className="font-semibold">toàn trình trực tuyến</span> và <span className="font-semibold text-red-600">không nhận hồ sơ giấy</span>.
+              Vui lòng liên hệ chúng tôi để được hỗ trợ làm thủ tục online một cách nhanh chóng và chính xác nhất.
+            </p>
           </div>
         </div>
       </section>
@@ -150,8 +229,12 @@ export default function HomePage() {
             </div>
             <div className="mt-6 space-y-3">
               <p className="text-lg sm:text-xl font-bold text-red-600">📞 HOTLINE/ZALO: 0933.211.134</p>
+              <p className="text-sm sm:text-base text-red-100">📞 Hỗ trợ kỹ thuật: 0367.582.386</p>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed px-2">
                 📍 <span className="font-semibold">ĐỊA CHỈ:</span> Ấp Phú Cường, Xã Thống Nhất, Tỉnh Đồng Nai
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed px-2">
+                📍 <span className="font-semibold">ĐỊA CHỈ 2:</span> LB 25 Quốc lộ 20, Ấp Láp Thạnh, Xã Dầu Giây, Đồng Nai (Gần chợ đầu mối Dầu Giây)
               </p>
             </div>
           </div>
