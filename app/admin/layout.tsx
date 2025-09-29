@@ -16,6 +16,7 @@ export default function AdminLayout({
     { href: '/admin/customers', icon: '👥', label: 'Khách hàng' },
     { href: '/admin/orders', icon: '📋', label: 'Hồ sơ' },
     { href: '/admin/services', icon: '⚙️', label: 'Dịch vụ' },
+    { href: '/admin/files', icon: '📁', label: 'Quản lý File' },
     { href: '/admin/finance', icon: '💰', label: 'Tài chính' },
     { href: '/admin/schedule', icon: '📅', label: 'Lịch làm việc' },
     { href: '/admin/reports', icon: '📈', label: 'Báo cáo' },

@@ -1,8 +1,31 @@
 import { updateSession } from "@/lib/supabase/middleware";
-import { type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+  // First, handle Supabase session
+  const response = await updateSession(request);
+  
+  // Add security headers
+  const headers = new Headers(response.headers);
+  
+  // Additional security headers (backup for next.config.ts)
+  headers.set('X-Frame-Options', 'SAMEORIGIN');
+  headers.set('X-Content-Type-Options', 'nosniff');
+  headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  headers.set('X-DNS-Prefetch-Control', 'on');
+  
+  // Remove sensitive headers that might leak information
+  headers.delete('Server');
+  headers.delete('X-Powered-By');
+  
+  // Set custom server header
+  headers.set('X-Powered-By', 'Thống Nhất Digital Services');
+  
+  return new NextResponse(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
 }
 
 export const config = {
