@@ -12,7 +12,9 @@
     "security:test": "node scripts/test-security-headers.js",
     "security:check": "echo 'Testing security headers...' && npm run security:test",
     "security:disclosure": "node scripts/test-header-disclosure.js",
-    "security:full": "npm run security:test && npm run security:disclosure"
+    "security:pragmatic": "node scripts/test-pragmatic-security.js",
+    "security:cors": "node scripts/test-cors-security.js",
+    "security:full": "npm run security:test && npm run security:pragmatic && npm run security:cors"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.1",

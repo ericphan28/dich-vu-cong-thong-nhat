@@ -16,12 +16,12 @@ const nextConfig: NextConfig = {
         // Apply these headers to all routes
         source: '/(.*)',
         headers: [
-          // Content Security Policy - Prevents XSS attacks
+          // Content Security Policy - Prevents XSS attacks (relaxed for Next.js compatibility)
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' https://vercel.live https://va.vercel-scripts.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://va.vercel-scripts.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
@@ -93,6 +93,23 @@ const nextConfig: NextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block'
+          },
+          // 🔒 CORS Security: Restrict access to specific origins only
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://thongnhat.giakiemso.com'
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS'
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization, X-Requested-With'
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true'
           }
         ]
       }
