@@ -19,6 +19,14 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Server",
+          "value": "ThongNhat-Web/1.0"
+        },
+        {
+          "key": "X-Powered-By", 
+          "value": "Thống Nhất Digital Services"
+        },
+        {
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; script-src 'self' https://vercel.live https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https: wss:; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
