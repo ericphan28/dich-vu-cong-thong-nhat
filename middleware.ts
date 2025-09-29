@@ -5,7 +5,7 @@ export async function middleware(request: NextRequest) {
   // First, handle Supabase session
   const response = await updateSession(request);
   
-  // Add security headers
+  // Add security headers and remove sensitive information
   const headers = new Headers(response.headers);
   
   // Additional security headers (backup for next.config.ts)
@@ -14,12 +14,26 @@ export async function middleware(request: NextRequest) {
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   headers.set('X-DNS-Prefetch-Control', 'on');
   
-  // Remove sensitive headers that might leak information
+  // 🔒 SECURITY: Remove sensitive headers that leak infrastructure info
   headers.delete('Server');
   headers.delete('X-Powered-By');
+  headers.delete('x-vercel-id');
+  headers.delete('x-nextjs-prerender');
+  headers.delete('x-nextjs-stale-time');
+  headers.delete('x-matched-path');
+  headers.delete('x-vercel-cache');
+  headers.delete('x-vercel-execution-region');
   
-  // Set custom server header
+  // Set custom server header to hide real infrastructure
+  headers.set('Server', 'ThongNhat-Web/1.0');
   headers.set('X-Powered-By', 'Thống Nhất Digital Services');
+  
+  // Restrict CORS for better security (instead of allowing all origins)
+  if (request.nextUrl.pathname.startsWith('/api/')) {
+    headers.set('Access-Control-Allow-Origin', 'https://thongnhat.giakiemso.com');
+    headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  }
   
   return new NextResponse(response.body, {
     status: response.status,
